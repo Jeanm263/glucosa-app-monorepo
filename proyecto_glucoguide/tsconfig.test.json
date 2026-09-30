@@ -21,6 +21,6 @@
     },
     "types": ["jest", "node"]
   },
-  "include": ["src/__tests__", "src/__mocks__"],
+  "include": ["src/**/__tests__", "src/**/__mocks__", "src/setupTests.ts"],
   "exclude": ["node_modules"]
 }
