@@ -1,0 +1,38 @@
+name: glucosa-app-stack
+
+services:
+  backend:
+    build:
+      context: ./glucosa-app-backend
+      dockerfile: Dockerfile
+    container_name: glucosa-app-backend
+    ports:
+      - "4000:4000"
+    env_file:
+      - ./glucosa-app-backend/.env
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./proyecto_glucoguide
+      dockerfile: Dockerfile
+    container_name: glucosa-app-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:7
+    container_name: glucosa-app-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:

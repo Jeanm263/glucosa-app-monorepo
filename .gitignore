@@ -1,0 +1,91 @@
+# =====================================
+# NODE / TYPESCRIPT
+# =====================================
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+*.local
+
+# Logs
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# =====================================
+# ENVIRONMENT VARIABLES
+# =====================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =====================================
+# SYSTEM / EDITOR
+# =====================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# =====================================
+# VITE
+# =====================================
+.vite/
+.vvite/
+.vite-temp/
+
+# =====================================
+# ANDROID
+# =====================================
+proyecto_glucoguide/android/app/src/main/assets/public/
+proyecto_glucoguide/android/app/src/main/assets/index.html
+proyecto_glucoguide/android/.gradle/
+proyecto_glucoguide/android/.idea/
+proyecto_glucoguide/android/build/
+proyecto_glucoguide/android/gradle/
+proyecto_glucoguide/android/*.apk
+proyecto_glucoguide/android/*.aab
+proyecto_glucoguide/android/**/*.ap_
+proyecto_glucoguide/android/**/*.obb
+
+# =====================================
+# CAPACITOR
+# =====================================
+capacitor.config.tsbuildinfo
+capacitor-cordova-android-plugins/
+
+# =====================================
+# DOCKER
+# =====================================
+glucosa-app-backend/docker/data/
+*.pid
+
+# =====================================
+# TESTS / COVERAGE
+# =====================================
+coverage/
+.nyc_output/
+
+# =====================================
+# BUILD / TEMP FILES
+# =====================================
+.tmp/
+.cache/
+
+# =====================================
+# OPTIONAL CACHE
+# =====================================
+.npm/
+.eslintcache
+
+# =====================================
+# LOCK FILE (root only, subprojects keep theirs)
+# =====================================

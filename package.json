@@ -1,0 +1,16 @@
+{
+  "name": "glucosa-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for GlucosaApp - Frontend (React/Vite/Capacitor) + Backend (Node/Express/MongoDB)",
+  "scripts": {
+    "dev:backend": "cd glucosa-app-backend && npm run dev",
+    "dev:frontend": "cd proyecto_glucoguide && npm run dev",
+    "build:backend": "cd glucosa-app-backend && npm run build",
+    "build:frontend": "cd proyecto_glucoguide && npm run build",
+    "lint:backend": "cd glucosa-app-backend && npm run lint",
+    "lint:frontend": "cd proyecto_glucoguide && npm run lint",
+    "test:backend": "cd glucosa-app-backend && npm run test",
+    "test:frontend": "cd proyecto_glucoguide && npm run test"
+  }
+}

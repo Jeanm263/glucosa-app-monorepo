@@ -1,0 +1,60 @@
+import { z } from 'zod';
+
+/**
+ * Schema de validación para login
+ */
+export const loginSchema = z.object({
+  email: z
+    .string()
+    .min(1, 'El email es requerido')
+    .email('El email no es válido'),
+  password: z
+    .string()
+    .min(1, 'La contraseña es requerida')
+    .min(6, 'La contraseña debe tener al menos 6 caracteres'),
+});
+
+export type LoginFormData = z.infer<typeof loginSchema>;
+
+/**
+ * Schema de validación para registro
+ */
+export const registerSchema = z
+  .object({
+    name: z
+      .string()
+      .min(1, 'El nombre es requerido')
+      .min(2, 'El nombre debe tener al menos 2 caracteres')
+      .max(50, 'El nombre no puede exceder 50 caracteres'),
+    email: z
+      .string()
+      .min(1, 'El email es requerido')
+      .email('El email no es válido')
+      .toLowerCase(),
+    password: z
+      .string()
+      .min(1, 'La contraseña es requerida')
+      .min(6, 'La contraseña debe tener al menos 6 caracteres')
+      .max(100, 'La contraseña no puede exceder 100 caracteres'),
+    confirmPassword: z.string().min(1, 'Confirma tu contraseña'),
+    age: z
+      .number()
+      .min(18, 'Debes tener al menos 18 años')
+      .max(120, 'Edad no válida')
+      .optional(),
+    diabetesType: z
+      .string()
+      .min(1, 'Selecciona el tipo de diabetes')
+      .optional(),
+    glucoseLevel: z
+      .number()
+      .min(1, 'El nivel de glucosa debe ser mayor a 0')
+      .max(500, 'Nivel de glucosa no válido')
+      .optional(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: 'Las contraseñas no coinciden',
+    path: ['confirmPassword'], // El error aparecerá en el campo confirmPassword
+  });
+
+export type RegisterFormData = z.infer<typeof registerSchema>;
